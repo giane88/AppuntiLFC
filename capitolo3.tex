@@ -57,7 +57,7 @@ allora $ \gamma $ deriva da $ \beta $ nella grammatica $ G $
 $$ \beta \Rightarrow \gamma \text{ se } A\rightarrow \alpha \text{ è una regola della grammatica } G$$
 ed inoltre
 $$\beta = hAd, \ \gamma = h\alpha d$$
-Il linguaggio generato da $ G $ quado si parte dal non terminale \emph{A} viene chiamato $ L_A(G) $. Una forma generata da \emph{G} partendo dal non terminale $ A \in V $ è una stringa $ \alpha \in (V\cup \Sigma)^*$ tale che:
+Il linguaggio generato da $ G $ quando si parte dal non terminale \emph{A} viene chiamato $ L_A(G) $. Una forma generata da \emph{G} partendo dal non terminale $ A \in V $ è una stringa $ \alpha \in (V\cup \Sigma)^*$ tale che:
 $$A\xRightarrow{*}\alpha$$
 Se il non terminale \emph{A} è l'\emph{assioma} allora la forma generata è detta frasale. Se la forma frasale generata contiene solamente caratteri terminali allora si chiama semplicemente \emph{frase}.\\
 Analizziamo ora l'esempio di una grammatica $ G_I $ che genera la struttura di un libro, il quale contiene un frontespizio $ f $ una serie di uno o più capitoli \emph{A} ed ogni capitolo inizia con un titolo \emph{t} e contiene una o più righe \emph{l}.
@@ -87,7 +87,7 @@ Per fare ciò si può applicare un algoritmo in due fasi. La prima fase identifi
 Più in dettaglio la fase uno si svolge lungo i seguenti passi:
 \begin{itemize}
 \item Costruzione dell'insieme complemento \texttt{DEF}	dei non-terminali definiti:
-$$DEf = V\setminus UNDEF$$
+$$DEF = V\setminus UNDEF$$
 \item Per costruire tale insieme si inseriscono tutti i non terminali che nelle loro regole presentano nella parte destra solo elementi terminali.
 $$DEF:= \{A|(A\rightarrow u)\in P \wedge u\in \Sigma^* \}$$
 \item Infine si inseriscono ricorsivamente nell'insieme tutti i non terminali che nelle loro regole presentano nella parte destra dei simboli terminali oppure dei simboli non terminali già inclusi in \texttt{DEF}
@@ -116,7 +116,7 @@ Vediamo ora una grammatica in \figurename \ref{fig:gramex} e i corrispettivi sot
 	\caption{Grammatica \ref{fig:gramex} e corrispettivi sotto alberi \ref{fig:subtree}}
 \end{figure}
 
-Da questa grammatica possiamo generare diverse stringhe e ad ogni stringa generata possiamo creare un albero sintattico come quello mostrato in \figurename \ref{fig:sintree}, quest'albero lo possiamo rappresentare in versione parentisizzata come segue:
+Da questa grammatica possiamo generare diverse stringhe e ad ogni stringa generata possiamo creare un albero sintattico come quello mostrato in \figurename \ref{fig:sintree}, quest'albero lo possiamo rappresentare in versione parentesizzata come segue:
 $$[[[[i]_F]_T]_E+[[[i]_F]_T\times [i]_F]_T]_E$$
 \begin{figure}
 	\centering
@@ -166,7 +166,7 @@ $$L = \{a^ib^jc^k | (i,j,k\geq 0) \wedge ((i=j)\vee (j= k) \}$$
 In quanto possiamo suddividerlo in due linguaggi ed effettuarne l'unione.
 $$L = \{a^ib^ic^* |i \geq 0 \} \cup \{a*ib^jc^j |j \geq 0 \}= L_1 \cup L_2$$
 In questo caso tutte le stringhe del tipo $ \varepsilon,abc,a^2b^2c^2,\dots $ sono generabili in entrambi i linguaggi. Questo comportamento è dovuto alla natura del linguaggio e in qualsiasi modo si modifichino le grammatiche che generano il comportamento delle frasi, l'ambiguità è inevitabile.\\
-La concatenazione di due linguaggi può portare ambiguità se essiste un suffisso di una frasedel primo linguaggio che è anche prefisso di una frase del secondo linguaggio.
+La concatenazione di due linguaggi può portare ambiguità se esiste un suffisso di una frase del primo linguaggio che è anche prefisso di una frase del secondo linguaggio.
 	$$G= (\Sigma_1 \cup \Sigma_2, \{S\}\cup V_{N_1} \cup V_{N_2}, \{S \rightarrow S_1S_2 \} \cup P_1\cup P_2, S)$$
 Assumiamo che le grammatiche $ G_1 $ e $ G_2 $ non siano ambigue, allora $ G $ è ambigua se esistono due frasi $ x' \in L_1 $ e $ x'' \in L_2 $ ed una stringa non vuota $ v $ tale che:
 $$x' = u'v \vee u'\in L_1 \quad x'' = vz'' \vee z'' \in L_2$$
@@ -187,7 +187,7 @@ Esiste poi quella che viene definita \emph{equivalenza strutturale in senso larg
 $$\{S\rightarrow Sa|a\} \quad \{X\rightarrow aX | a \} $$
 Queste due grammatiche non sono equivalenti strutturalmente in quanto per generare la stringa $ aa $ creano due alberi sintattici diversi, tuttavia l'unica differenza che intercorre tra le due è che l'albero sintattico della seconda è rispecchiato rispetto alla prima. Si dice quindi che le due grammatiche sono equivalenti in senso \emph{largo}.
 \subsection{Grammatiche in forma normale}
-Una grammatica in forma normale comporta alcune restrizioni a livello di regole, tuttavia non ne limita la potenza espressiva. Questo tipo di forma è utile per dimostrare i teoremi piuttosto che per la definnizioni di linguaggi.\\
+Una grammatica in forma normale comporta alcune restrizioni a livello di regole, tuttavia non ne limita la potenza espressiva. Questo tipo di forma è utile per dimostrare i teoremi piuttosto che per la definizioni di linguaggi.\\
 Esistono alcune trasformazioni per trasformare una grammatica dalla sua forma generale alla sua forma normale. Queste trasformazioni sono utili per costruire degli analizzatori sintattici.
 \paragraph{Espansione di un non terminale}
 Prendiamo in considerazione la grammatica $ G = \{\Sigma,V,P,S \} $ composta dalle seguenti due regole
@@ -201,7 +201,7 @@ Un non-terminale si dice \emph{annullabile} se e solo se esiste una derivazione 
 $$A\xRightarrow{+}\varepsilon$$
 Questo tuttavia non significa che il non terminale in questione possa generare altre stringhe diverse da $ \varepsilon $.
 Consideriamo $ Null\subseteq V $ l'insieme dei non terminali annullabili allora
-$$A \in Null \iff (A\rightarrow \varepsilon \in P9 \wedge ((A\rightarrow A_1A_2\dots A_n \in P \ con \ A_i\in V\backslash\{A\})\wedge \forall A_i (A_i \in Null))$$
+$$A \in Null \iff (A\rightarrow \varepsilon \in P)\wedge ((A\rightarrow A_1A_2\dots A_n \in P \ con \ A_i\in V\backslash\{A\})\wedge \forall A_i (A_i \in Null))$$
 Un esempio è la grammatica:
 $$S\rightarrow SAB | AC \quad A\rightarrow aA|\varepsilon \quad B\rightarrow bB|\varepsilon \quad C\rightarrow cC|c$$
 L'insieme dei non-terminali annullabili è 
@@ -217,7 +217,7 @@ Per ottenere una grammatica in forma normale non annullabile dobbiamo procedere 
 \end{enumerate}
 \subsection{Regole di copiatura e loro eliminazione}
 Prendiamo ad esempio la regola $A\rightarrow B$, in questa regola la classe sintattica $ B $ è inclusa in quella di \emph{A}, rimuovendola si ottiene una grammatica equivalente ma che ha un albero sintattico meno profondo.
-Consideriamo ora $ Copy(A)\subseteq V $ come l'insieme dei non-terminali in cui il terminale \emph{A} viene copiato. Le regole di copiatura non sono totalmente inutili anzi talvolta ci permetono di condividere alcune parti della grammatica, per questo le regole di copiatura vengono utilizzate nelle grammatiche dei linguaggi tecnici come ad esempio le istanze nei linguaggi di programmazione.\\
+Consideriamo ora $ Copy(A)\subseteq V $ come l'insieme dei non-terminali in cui il terminale \emph{A} viene copiato. Le regole di copiatura non sono totalmente inutili anzi talvolta ci permettono di condividere alcune parti della grammatica, per questo le regole di copiatura vengono utilizzate nelle grammatiche dei linguaggi tecnici come ad esempio le istanze nei linguaggi di programmazione.\\
 Per eliminare le regole di copiatura per prima cosa dobbiamo calcolare l'insieme \emph{Copy}; per calcolare tale insieme si seguono le seguenti clausole logiche.
 $$A \in Copy(A)$$
 $$C \in Copy(A) \ se \ (B\in Copy(A))\wedge (B\rightarrow C \in P)$$
@@ -239,13 +239,13 @@ Un esempio di trasformazione in forma normale di Chomsky è mostrato in \figuren
 	\caption{Esempio di trasformazione in forma normale di chomsky}\label{fig:chomsky}
 \end{figure}
 \subsection{Forma normale \emph{Real Time}}
-Prima di introdurre la forma normale real time dobbiamo introdurre la \emph{trasformazione della ricorsione sinistra} in una ricorsione destra. Prima di tutto si parte con il trasformare una ricorsione sinistra in una forma non ricorsiva a sinitra come nell'esempio mostrato in \figurename \ref{fig:leftrec} questa trasformazione è indispensabile per creare anallizzatori sintattici discendenti.
+Prima di introdurre la forma normale real time dobbiamo introdurre la \emph{trasformazione della ricorsione sinistra} in una ricorsione destra. Prima di tutto si parte con il trasformare una ricorsione sinistra in una forma non ricorsiva a sinistra come nell'esempio mostrato in \figurename \ref{fig:leftrec} questa trasformazione è indispensabile per creare analizzatori sintattici discendenti.
 \begin{figure}
 	\centering
 	\includegraphics[width=0.4\linewidth]{img/leftrec.png}
 	\caption{Esempio di trasformazione di una ricorsione sinistra}\label{fig:leftrec}
 \end{figure}
-In questo esempiio la ricorsione è diretta, tuttavia nel caso la ricorsione non sia diretta si lavora con un algoritmo in due fasi che però necessita di alcune ipotesi, ovvero, la grammatica \emph{G} deve essere non-omogenea, non-annullabile e le regole devono presentare al massimo un non terminale. L'algoritmo applicato lavora iterativamente su due passi, il primo consiste nell'espansione delle regole per esporre la ricorsione sinistra, il secondo passaggio trasforma la ricorsione sinistra in una ricorsione destra.
+In questo esempio la ricorsione è diretta, tuttavia nel caso la ricorsione non sia diretta si lavora con un algoritmo in due fasi che però necessita di alcune ipotesi, ovvero, la grammatica \emph{G} deve essere non-omogenea, non-annullabile e le regole devono presentare al massimo un non terminale. L'algoritmo applicato lavora iterativamente su due passi, il primo consiste nell'espansione delle regole per esporre la ricorsione sinistra, il secondo passaggio trasforma la ricorsione sinistra in una ricorsione destra.
 La forma \emph{normale real-time} è una forma nella quale le regole della grammatica iniziano sempre con un simbolo terminale (niente ricorsione sinistra). 
 $$A\rightarrow a\alpha \ dove \ a \in \Sigma, \alpha\in\{\Sigma\cup V \}^*$$
 Esiste poi una particolare forma real time che è quella di \emph{Greibach} nella quale il simbolo terminale è seguito da uno o più non-terminali.
@@ -272,7 +272,7 @@ Per trasformare una grammatica in forma normale real time bisogno che essa sia n
 	\caption{Esempio di trasformazione in forma normale}
 \end{figure}
 \subsection{Linguaggi regolari e grammatiche libere}
-I linguaggu regolari sono casi particolari di quelli liberi, essi infatti possono essere generati da gramatiche che presentano delle regole fortemente ristrette. Man mano che la lunghezza di una stringa generata da un linguaggio regolare cresce essa presenta delle sottostringhe ripetute.\\
+I linguaggi regolari sono casi particolari di quelli liberi, essi infatti possono essere generati da grammatiche che presentano delle regole fortemente ristrette. Man mano che la lunghezza di una stringa generata da un linguaggio regolare cresce essa presenta delle sotto-stringhe ripetute.\\
 È possibile dimostrare in modo rigoroso che alcuni linguaggi liberi non possono essere generate da espressioni regolari.
 Nei linguaggi regolari per identificare una stringa è necessaria solo una quantità finita di memoria, per i linguaggi liberi invece la quantità di memoria deve essere infinita.
 \subsubsection{Dalle espressioni regolari alle grammatiche libere}
@@ -285,5 +285,84 @@ Gli operatori iterativi regolari come \emph{stella} e \emph{croce} posso essere 
 Nel caso la in cui l'espressione regolare risulti ambigua anche l'equivalente grammatica sarà ambigua. Ogni linguaggio regolare è libero ma non tutti i linguaggi liberi sono regolari.
 $$REG \subset LIB$$
 \subsubsection{Grammatiche lineari}
-Una grammatica si definisce lineare se ogni regola ha al più un non-terminale nella parte destra della regola.
+Una grammatica si definisce lineare se ogni regola ha al più un non-terminale nella parte destra della regola come ad esempio:
 $$A\rightarrow uBv \text{ dove } u,v \in \Sigma^*, B\in (V\cup\varepsilon)$$
+La famiglia delle grammatiche libere lineari è comunque più grande di quelle regolari, ad esempio la grammatica seguente è lineare ma comunque non regolare.
+$$L_1 = \{a^nb^n| n \geq 1 \} = \{aac,aacc,\dots \}$$
+$$S\rightarrow aSc | ac$$
+Esistono tuttavia le grammatiche \emph{uni-lineari} di tipo \emph{destro}:
+$$A\rightarrow uB \text{ dove } u\in \Sigma^*,B\in(V\cup \varepsilon)$$
+e di tipo \emph{sinistro}:
+$$A\rightarrow Bu \text{ dove } u\in \Sigma^*,B\in(V\cup \varepsilon)$$
+In questi due casi l'albero sintattico cresce in maniera fortemente sbilanciata. Le grammatiche uni-lineari destre e sinistre contengono derivazioni ricorsive rispettivamente a destra e a sinistra.\\
+Prendiamo come esempio la grammatica lineare destra $ G_d $ e lineare sinistra $ G_s $che rappresenta le espressioni aritmetiche di \figurename \ref{fig:aritgram}.
+\begin{figure}
+	\centering
+	\includegraphics[width=0.4\linewidth]{img/aritgram.png}
+	\caption{Grammatica uni-lineare per la costruzione di espressioni aritmetiche}\label{fig:arigram}
+\end{figure}
+$ G_s $ e $ G_d $ non sono adeguate per la compilazione in quanto la loro sintassi non tiene conto delle normali regole di precedenza tra le espressioni. Risulta perciò conveniente trasformare la grammatica \emph{uni-lineare} in una grammatica \emph{strettamente uni-lineare} nella quale ogni regola contiene al massimo un simbolo terminale del tipo:
+$$A\rightarrow aB \text{ oppure } A \rightarrow Ba \text{ dove } a\in(\Sigma \cup \varepsilon), B \in ( V\cup \varepsilon)$$
+Inoltre senza perdere di generalità si può imporre che le uniche regole terminali siano nulle:
+$$A\rightarrow aB | \varepsilon \text{ dove } a\in\Sigma$$
+Dopo questa introduzione possiamo dimostrare come la famiglia dei linguaggi generati da grammatiche uni-lineari contiene strettamente quella dei linguaggi regolari.\\
+Possiamo pensare alle regole di una grammatica uni-lineare destra come delle equazioni nelle quali il termine incognito è rappresentato dal simbolo non terminale. Sostituiamo la regola ricorsiva $ A\rightarrow aA $ con l'equazione $ L_A=L_aL_A $, sostituiamo la regola $ A\rightarrow bB $ con l'equazione $ L_A=L_bL_B $ ed infine la regola $ A\rightarrow a $ con la regola $ L_A = L_a $. Nel caso vi siano più regole per lo stesso simbolo non terminale le uniamo come segue:
+$$A\rightarrow c \quad A\rightarrow bB$$
+$$L_A= L_bL_B|L_c$$
+Risolviamo le equazioni così ottenute per sostituzione. nel caso di equazioni ricorsive come la seguente
+$$L_A=L_x|L_yL_A$$
+si risolve applicando l'\emph{identità di Arden} e si trasforma in:
+$$L_A=L_yL_x$$
+Prendiamo ad esempio la grammatica uni-lineare destra:
+$$S\rightarrow sS|eA \quad A\rightarrow sS|\varepsilon$$
+essa può essere trasformata in un insieme di equazioni come quelle di \figurename \ref{fig:equagram} che da come risultato un linguaggio che può essere modellizato tramite espressioni regolari.
+\begin{figure}
+	\centering
+	\includegraphics[width=0.35\linewidth]{img/equagram.png}
+	\caption{Trasformazione di una grammatica uni-lineare}\label{fig:equagram}
+\end{figure}
+Una proprietà delle grammatiche strettamente uni-lineari è che presa una grammatica $ G $, ogni stringa $ x $ abbastanza lunga tale che $ |x| > k $ generata da \emph{G} può essere fattorizzata come $ x=tuv $ dove u è non vuota. Allora per ogni intero $ n\geq 1 $ la stringa $ tu^nv $ appartiene ancora a $ G $.\\
+Una prova è il fatto che considerando una grammatica uni-lineare $ G $ composta da \emph{k} simboli non terminali e una stringa \emph{x} di lunghezza maggiore di \emph{k} allora sicuramente vi sarà un non terminale ripetuto.
+Questa proprietà è dovuta al fatto che nei linguaggi regolari le ripetizioni sono inevitabili.
+\subsubsection{Il ruolo delle derivazioni \emph{auto-inclusive}}
+Le derivazioni auto-inclusive non si possono presentare nelle grammatiche uni-lineare dei linguaggi regolari, possono invece presentarsi nelle grammatiche libere che generano linguaggi non regolari. L'assenza di derivazioni auto inclusive ci permette di risolvere le equazioni insiemistiche associate alle grammatiche uni-lineari e di capire quali sono le strutture dei linguaggi che queste grammatiche generano. \\
+Vi è solo un eccezione a questa regola e si verifica quando il linguaggio è costruito su di un alfabeto terminale costituito da un solo simbolo:
+$$S\rightarrow aSa | \varepsilon$$
+Crea il linguaggio regolare $L(G) = (aa)^* $
+Nei linguaggi liberi frasi sufficientemente lunghe contengono necessariamente almeno due sotto-stringhe ripetute quante volte si vuole che danno luogo a strutture innestate.
+Tale proprietà può essere espressa considerando \emph{x} una frase abbastanza lunga ($ |x| > k $) generata dalla grammatica libera \emph{G}, tale stringa può essere fattorizzata come $ x = yuwvz $; in questa maniera considerando un $ n\geq 1 $ la stringa $ yu^nwv^nz $ è anch'essa generata da \emph{G}
+\subsection{Proprietà di chiusura delle famiglie \texttt{REG} e \texttt{LIB}}
+In \figurename \ref{fig:chiusura} vediamo le proprietà di chiusura delle famiglie dei linguaggi regolari \texttt{REG} e quella delle famiglie delle grammatiche libere \texttt{LIB} rispetto agli operatori più comuni.
+\begin{figure}
+	\centering
+	\includegraphics[width=0.4\linewidth]{img/chiusura.png}
+	\caption{Proprietà di chiusura rispetto ai comuni operatori}\label{fig:chiusura}
+\end{figure}
+Il simbolo $ \oplus $ indica entrambi gli operatori unione e concatenazione.
+Da questo schema possiamo definire alcune caratteristiche:
+\begin{itemize}
+	\item La riflessione di un linguaggio $ L(G) $ si genera attraverso la riflessione della grammatica che si ottiene invertendo la parte destra delle regole.
+	\item Applicando un operatore stella, unione o concatenazione ad un linguaggio libero si ottiene ancora un linguaggio libero.
+	\item Se due grammatiche che devono essere unite condividono alcuni simboli non-terminali la loro unione genera un linguaggio che è l'unione degli elementi generati dai due linguaggi.
+	\item L'intersezione di due linguaggi liberi solitamente non genera un linguaggio libero
+	\item Esistono dei linguaggi liberi il cui complemento non è un linguaggio libero.
+\end{itemize}
+Per rendere una grammatica libera più selettiva è possibile filtrarla con un'espressione regolare, ovvero effettuare l'intersezione con un espressione regolare.
+\subsection{Grammatiche libere estese}
+Le espressioni regolari risultano più chiare e leggibili delle grammatiche libere, grazie soprattutto all'utilizzo degli operatori di iterazione e di scelta. Per far diventare una grammatica libera più chiara e leggibile spesso si utilizzano le espressioni regolari nella parte destra delle regole. Le grammatiche così ottenute si chiamano \emph{grammatiche libere estese}, e sono usate soprattutto per descrivere linguaggi tecnici come quelli di programmazione o di descrizione.
+Le grammatiche estese possono essere rappresentate da diagrammi sintattici.\\
+Essendo la famiglia dei linguaggi liberi chiusa rispetto agli operatori regolari le grammatiche estese hanno la stessa potenza generazionale di quelle non estese.\\
+Una grammatica libera estesa $ G = (V, \Sigma, P, S) $ consiste in esattamente $ |V| $ regole ognuna delle quali nella forma $A\rightarrow \eta$ dove $ \eta $ indica un espressione regolare sull'alfabeto $ \Sigma\cup V $. Un esempio è quello di \figurename \ref{fig:algo} che descrive un linguaggio di programmazione con dichiarazione di variabili.\\
+\begin{figure}
+	\centering
+	\includegraphics[width=0.3\linewidth]{img/algo.png}
+	\caption{Esempio di grammatiche estesa}\label{fig:algo}
+\end{figure}
+La parte destra di una regola estesa è un espressione regolare che definisce un insieme infinito di stringhe. Queste stringhe vanno immaginate nella parte destra di una grammatica equivalente.
+Date due stringhe $ \eta_1, \eta_2 \in (\Sigma\cup V)^* $ si dice che $ \eta_2 $ deriva da $ \eta_1 $ se le due stringhe possono essere fattorizzate come segue
+$$\eta_1=\alpha A\gamma \quad \eta_2=\alpha\vartheta\gamma$$
+ed esiste una regola
+$$A\rightarrow e : \ e \xRightarrow{*}\vartheta$$
+dove $ e $ è un espressione regolare.\\
+Se una grammatica non estesa è ambigua allora anche la grammatica estesa da essa ricavata sarà ambigua; in generale le grammatiche estese non inseriscono ambiguità tranne in casi particolari come il seguente:
+$$S\rightarrow a^*b|ab^*$$S
